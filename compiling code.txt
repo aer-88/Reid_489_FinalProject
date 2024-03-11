@@ -1,0 +1,8 @@
+from Python command prompt:
+(arcgispro-py3-clone) C:\Users\Eliot\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone>d:
+
+(arcgispro-py3-clone) d:\>cd PennState\Geog489\Final Project\Code
+
+(arcgispro-py3-clone) d:\PennState\Geog489\Final Project\Code>python.exe -m PyQt5.uic.pyuic streetCL_QC_gui.ui -o streetCL_QC_gui.py
+
+(arcgispro-py3-clone) d:\PennState\Geog489\Final Project\Code>
