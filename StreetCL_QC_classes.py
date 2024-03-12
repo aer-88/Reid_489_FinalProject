@@ -103,3 +103,10 @@ Functions:
 
 
 '''
+
+arcpy.management.ApplySymbologyFromLayer(
+    in_layer="Projects",
+    in_symbology_layer="Projects_GDB",
+    symbology_fields="VALUE_FIELD projectofficialname projectofficialname",
+    update_symbology="MAINTAIN"
+)

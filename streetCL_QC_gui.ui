@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>314</height>
+    <width>338</width>
+    <height>507</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,6 +48,80 @@
      </widget>
     </item>
     <item>
+     <widget class="Line" name="line_5">
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="fieldsTW">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="fieldsTab">
+       <attribute name="title">
+        <string>Input Fields</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="2" column="0" rowspan="2" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="fldsAddRngLftToLBL">
+          <property name="text">
+           <string>Address Range - Left To:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="fldsAddRngLftFromCB"/>
+        </item>
+        <item row="4" column="1">
+         <widget class="QComboBox" name="fldsAddRngRtFromCB"/>
+        </item>
+        <item row="2" column="1">
+         <widget class="QComboBox" name="fldsAddRngLftToCB"/>
+        </item>
+        <item row="1" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="fldsAddRngLftFromLBL">
+          <property name="text">
+           <string>Address Range - Left From:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="fldsAddRngRtToLBL">
+          <property name="text">
+           <string>Address Range - Right To:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="fldsStNameLBL">
+          <property name="text">
+           <string>Street Name:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="fldsStrNameCB"/>
+        </item>
+        <item row="4" column="0" rowspan="2" alignment="Qt::AlignRight">
+         <widget class="QLabel" name="fldsAddRngRtFromLBL">
+          <property name="text">
+           <string>Address Range - Right From:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QComboBox" name="fldsAddRngRtToCB"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
      <widget class="Line" name="line">
       <property name="lineWidth">
        <number>2</number>
@@ -63,22 +137,15 @@
        <string>Analysis Options</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
-       <item row="7" column="0">
-        <widget class="QLabel" name="queryAnalysisAllLBL">
+       <item row="0" column="0">
+        <widget class="QLabel" name="queryAnalysisOverlapsLBL">
          <property name="text">
-          <string>All Analyses</string>
+          <string>Overlaps</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QCheckBox" name="queryAnalysisNullsCXBX">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QCheckBox" name="queryAnalysisAllCXBX">
+       <item row="0" column="1">
+        <widget class="QCheckBox" name="queryAnalysisOverlapsCXBX">
          <property name="text">
           <string/>
          </property>
@@ -91,27 +158,6 @@
          </property>
         </widget>
        </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="queryAnalysisOverlapsLBL">
-         <property name="text">
-          <string>Overlaps</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="queryAnalysisNullsLBL">
-         <property name="text">
-          <string>Nulls</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QCheckBox" name="queryAnalysisOverlapsCXBX">
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
        <item row="0" column="3">
         <widget class="QCheckBox" name="queryAnalysisGapsCKBX">
          <property name="text">
@@ -119,21 +165,49 @@
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
+       <item row="1" column="0">
+        <widget class="QLabel" name="queryAnalysisNullsLBL">
+         <property name="text">
+          <string>Nulls</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QCheckBox" name="queryAnalysisNullsCXBX">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
         <widget class="QLabel" name="queryAnalysisFlowLBL">
          <property name="text">
           <string>Flow</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="3">
+       <item row="1" column="3">
         <widget class="QCheckBox" name="queryAnalysisFlowCKBX">
          <property name="text">
           <string/>
          </property>
         </widget>
        </item>
-       <item row="6" column="0" colspan="2">
+       <item row="3" column="0">
+        <widget class="QLabel" name="queryAnalysisAllLBL">
+         <property name="text">
+          <string>All Analyses</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="queryAnalysisAllCXBX">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="4">
         <widget class="Line" name="line_4">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -246,6 +320,12 @@
  <tabstops>
   <tabstop>polygonshpLE</tabstop>
   <tabstop>polygonshpTB</tabstop>
+  <tabstop>fieldsTW</tabstop>
+  <tabstop>fldsStrNameCB</tabstop>
+  <tabstop>fldsAddRngLftFromCB</tabstop>
+  <tabstop>fldsAddRngLftToCB</tabstop>
+  <tabstop>fldsAddRngRtFromCB</tabstop>
+  <tabstop>fldsAddRngRtToCB</tabstop>
   <tabstop>queryAnalysisOverlapsCXBX</tabstop>
   <tabstop>queryAnalysisGapsCKBX</tabstop>
   <tabstop>queryAnalysisNullsCXBX</tabstop>
