@@ -101,12 +101,45 @@ Functions:
 19. The error details from the udtErrStrt array are added to the strWriteFile array.
 20. Finally, the WriteFile function is called to write the contents of the strWriteFile array to the output text file specified by strWFile.
 
-
 '''
+# for reference only
+# arcpy.management.ApplySymbologyFromLayer(
+#     in_layer="Projects",
+#     in_symbology_layer="Projects_GDB",
+#     symbology_fields="VALUE_FIELD projectofficialname projectofficialname",
+#     update_symbology="MAINTAIN"
+# )
 
-arcpy.management.ApplySymbologyFromLayer(
-    in_layer="Projects",
-    in_symbology_layer="Projects_GDB",
-    symbology_fields="VALUE_FIELD projectofficialname projectofficialname",
-    update_symbology="MAINTAIN"
-)
+def sort_str_array(str_array):
+    # Returns a sorted (ascending) string array
+    for i in range(len(str_array)):
+        for j in range(i, len(str_array)):
+            if str_array[i] > str_array[j]:
+                str_array[i], str_array[j] = str_array[j], str_array[i]
+
+def sort_rf_array(udt_array):
+    # Returns a sorted (ascending) StrtData array using the Right From Address field
+    for i in range(len(udt_array)):
+        for j in range(i, len(udt_array)):
+            if udt_array[i].intRF_Add > udt_array[j].intRF_Add:
+                udt_array[i], udt_array[j] = udt_array[j], udt_array[i]
+
+def no_dup(str_array):
+    # Returns a string array that contains no duplicates
+    str_new_array = []
+    for i in range(len(str_array)):
+        exists = False
+        if i == 0:
+            str_new_array.append(str_array[0])
+        else:
+            for j in range(len(str_new_array)):
+                if str_array[i] == str_new_array[j]:
+                    exists = True
+                    break
+            if not exists:
+                str_new_array.append(str_array[i])
+    return str_new_array
+
+def is_even(int_val):
+    # Returns True if the value is an even integer, False if it is odd
+    return int_val % 2 == 0

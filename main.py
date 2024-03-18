@@ -1,9 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
-from PyQT5.Qt import QT
+from PyQt5.Qt import QT
 
 #import other python files for project
-import StreetCL_QC_GUI
+import streetCL_QC_gui
 import StreetCL_QC_core_functions
 
 # ======================================================
@@ -28,7 +28,7 @@ app = QApplication(sys.argv)
 
 # Set up main window
 mainWindow = QMainWindow()
-ui = StreetCL_QC_GUI.Ui_MainWindow()
+ui = streetCL_QC_gui.Ui_MainWindow()
 ui.setupUi(mainWindow)
 
 # ============================== 
@@ -38,3 +38,6 @@ ui.setupUi(mainWindow)
 # ====== Run app ====== #
 mainWindow.show()
 sys.exit(app.exec())
+
+
+fc = r'D:\PennState\Geog489\Final Project\Final Project\FinalProj489.gdb\StrCLWorking'
