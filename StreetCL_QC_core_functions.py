@@ -88,6 +88,8 @@ Functions:
   5. A loop iterates through each element in the udtFile array, excluding the header row. If the address of the street segment is greater than 0, the street name is added to the strStreets array.
   6. The SortStrArray function is called to sort the strStreets array in alphabetical order.
   7. The NoDup function is called to remove duplicate street names from the strStreets array.
+  
+  Now we start another loop to check each street
   8. Another loop iterates through each street name in the strStreets array.
   9. Inside this loop, a new array (udtCurStrt) is initialized to store all the street segments for the current street.
   10. Another loop iterates through the udtFile array to collect each segment for the current street.
@@ -111,19 +113,19 @@ Functions:
 #     update_symbology="MAINTAIN"
 # )
 
-def sort_str_array(str_array):
-    # Returns a sorted (ascending) string array
-    for i in range(len(str_array)):
-        for j in range(i, len(str_array)):
-            if str_array[i] > str_array[j]:
-                str_array[i], str_array[j] = str_array[j], str_array[i]
+def sort_str_list(sorted_list):
+    # Returns a sorted (ascending) string list
+    for i in range(len(sorted_list)):
+        for j in range(i, len(sorted_list)):
+            if sorted_list[i] > sorted_list[j]:
+                sorted_list[i], sorted_list[j] = sorted_list[j], sorted_list[i]
 
-def sort_rf_array(udt_array):
-    # Returns a sorted (ascending) StrtData array using the Right From Address field
-    for i in range(len(udt_array)):
-        for j in range(i, len(udt_array)):
-            if udt_array[i].intRF_Add > udt_array[j].intRF_Add:
-                udt_array[i], udt_array[j] = udt_array[j], udt_array[i]
+def sort_rf_list(userdeflist_list):
+    # Returns a sorted (ascending) StrtData list using the Right From Address field
+    for i in range(len(userdeflist_list)):
+        for j in range(i, len(userdeflist_list)):
+            if userdeflist_list[i].intRF_Add > userdeflist_list[j].intRF_Add:
+                userdeflist_list[i], userdeflist_list[j] = userdeflist_list[j], userdeflist_list[i]
 
 '''
 Good Code
