@@ -1,3 +1,5 @@
+## !!! right now everythign in here is from Lesson 2 Assignment 2, it hasn't been updated for final project yet !!! ###
+
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5.Qt import QT
